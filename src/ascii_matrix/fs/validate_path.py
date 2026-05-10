@@ -3,7 +3,7 @@ from pathlib import Path
 VALID_EXTENSIONS = { ".png", ".jpg", ".jpeg", ".gif", ".webp" }
 
 def validate_image_path(path: str) -> Path:
-    path_obj = Path(path)
+    path_obj = Path(path).expanduser().resolve()
 
     if not path_obj.exists():
         raise FileNotFoundError(f"Image not found: {path}")

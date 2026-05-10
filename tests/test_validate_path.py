@@ -28,3 +28,14 @@ def test_validate_image_path_with_a_valid_image(tmp_path):
 
     assert isinstance(result, Path)
     assert result.name == "penguin.png"
+
+def test_validate_image_path_with_a_relative_valid_image(tmp_path, monkeypatch):
+    cat_image = tmp_path / "cat.jpg"
+    cat_image.write_bytes(b"I'm a cat")
+
+    monkeypatch.chdir(tmp_path)
+
+    result = validate_image_path("cat.jpg")
+
+    assert result.name == "cat.jpg"
+    assert result.is_absolute()
