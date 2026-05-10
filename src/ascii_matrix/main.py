@@ -1,6 +1,5 @@
 def main():
-    print("Hello from ascii-matrix!")
-
+    print('Ascii Matrix art')
 
 if __name__ == "__main__":
     main()
