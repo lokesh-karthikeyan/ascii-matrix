@@ -3,7 +3,7 @@ from PIL import Image as PILImage
 
 def to_ascii(pil_image: PILImage.Image) -> str:
     grayscale_img = pil_image.convert('L')
-    pixels        = list(grayscale_img.getdata())
+    pixels        = list(grayscale_img.get_flattened_data())
     width, _      = grayscale_img.size
 
     ascii_chars = []
