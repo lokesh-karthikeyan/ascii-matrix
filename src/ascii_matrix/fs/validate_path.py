@@ -1,6 +1,5 @@
 from pathlib import Path
-
-VALID_EXTENSIONS = { ".png", ".jpg", ".jpeg", ".gif", ".webp" }
+from ascii_matrix.constants import VALID_EXTENSIONS
 
 def validate_image_path(path: str) -> Path:
     path_obj = Path(path).expanduser().resolve()

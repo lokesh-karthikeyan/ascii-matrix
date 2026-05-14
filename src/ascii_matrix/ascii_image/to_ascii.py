@@ -1,5 +1,5 @@
-CHARSET = "マミムメモガギグゲゴ108965QWERTYUIOPASDFGHJKLZXCVBnmwqpdbkloivcxz+=-:. "
 from PIL import Image as PILImage
+from ascii_matrix.constants import MATRIX_CHARS
 
 def to_ascii(pil_image: PILImage.Image) -> str:
     grayscale_img = pil_image.convert('L')
@@ -7,11 +7,11 @@ def to_ascii(pil_image: PILImage.Image) -> str:
     width, _      = grayscale_img.size
 
     ascii_chars = []
-    charset_len = len(CHARSET)
+    charset_len = len(MATRIX_CHARS)
 
     for index, pixel in enumerate(pixels):
         charset_index = int((pixel / 255.0) * (charset_len - 1))
-        ascii_chars.append(CHARSET[charset_index])
+        ascii_chars.append(MATRIX_CHARS[charset_index])
 
         if (index + 1) % width == 0:
             ascii_chars.append("\n")
