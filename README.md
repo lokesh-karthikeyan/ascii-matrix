@@ -20,3 +20,8 @@ Converts images into a Matrix-style digital rain animation in the terminal. Rend
     Options:
     - -i, --image — Path to the image file (required)
     - -c, --color — Color of the matrix effect: red, green, blue, white (default: white)
+
+## Demo
+
+https://github.com/user-attachments/assets/dbd8b1f1-0c27-4755-b2d9-4d0b58cf350e
+
